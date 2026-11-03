@@ -105,7 +105,6 @@ const firebaseConfig = {
 import { initializeApp } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-app.js";
 import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, deleteUser, signOut, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js";
 import { getFirestore, doc, getDoc, setDoc, addDoc, collection, query, where, orderBy, limit, getDocs, updateDoc, serverTimestamp, onSnapshot, writeBatch } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-firestore.js";
-import { firebaseConfig } from "./firebase-config.js";
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -224,7 +223,7 @@ async function createProject(){
 }
 async function createInvitation(){
   if(!canManage())return;
-  const roles=Object.entries(ROLE_LABELS).filter(([r])=>profile.role==="superAdmin"||!["superAdmin","churchAdmin"].includes(r));
+  const roles = Object.entries(ROLE_LABELS).filter(([r]) => r !== "superAdmin" && (profile.role === "superAdmin" || r !== "churchAdmin"));
   openModal("Create team invitation",`${field("email","Invitee email","person@example.com")}<label class="field">Assigned role<select name="role">${roles.map(([r,l])=>`<option value="${r}">${l}</option>`).join("")}</select></label><label class="field">Department<select name="department">${DEPARTMENTS.map(x=>`<option>${x}</option>`).join("")}</select></label><label class="field">Invitation code<input name="code" required minlength="12" value="${crypto.randomUUID().replaceAll("-","").slice(0,16).toUpperCase()}"></label>`,async fd=>{const email=fd.get("email").trim().toLowerCase(),code=fd.get("code").trim().toUpperCase();const ref=doc(db,"invitations",code);if((await getDoc(ref)).exists())throw Error("That invitation code already exists.");await setDoc(ref,{email,role:fd.get("role"),department:fd.get("department"),status:"pending",createdBy:currentUser.uid,createdAt:serverTimestamp(),redeemedBy:null,redeemedAt:null});await addActivity("invite","Team invitation created",`Invitation issued for ${email}`);await navigator.clipboard?.writeText(code).catch(()=>{});toast("Invitation created. Share the code securely with the invited person.");await loadData();});
 }
 async function addMedia(){
@@ -291,30 +290,77 @@ function renderPage(){renderPageBase();bindPageActions();}
 $("#loginForm").addEventListener("submit",async e=>{e.preventDefault();try{await signInWithEmailAndPassword(auth,$("#loginEmail").value.trim(),$("#loginPassword").value);toast("Signed in.");}catch(err){toast(err.message);}});
 $("#showRegister").addEventListener("click",()=>{$("#loginForm").classList.add("hidden");$("#showRegister").classList.add("hidden");$("#registerForm").classList.remove("hidden");$("#authHeading").textContent="Join the studio";$("#authSub").textContent="Your invitation must be valid and assigned to your email.";});
 $("#backToLogin").addEventListener("click",()=>{$("#registerForm").classList.add("hidden");$("#loginForm").classList.remove("hidden");$("#showRegister").classList.remove("hidden");$("#authHeading").textContent="Welcome back";$("#authSub").textContent="Sign in with your invited team account.";});
-$("#registerForm").addEventListener("submit",async e=>{
-  e.preventDefault();const code=$("#inviteCode").value.trim().toUpperCase(),email=$("#registerEmail").value.trim().toLowerCase(),name=$("#registerName").value.trim(),password=$("#registerPassword").value;
-  let cred=null;
-  try{
-    // Sign in first so Firestore can securely reveal only an invitation assigned to this email.
-    isRegistering=true;
-    cred=await createUserWithEmailAndPassword(auth,email,password);
-    const invRef=doc(db,"invitations",code),invSnap=await getDoc(invRef);
-    if(!invSnap.exists()){
-      await deleteUser(cred.user); await signOut(auth);
-      throw Error("Invitation not found. Ask your Media Director to issue a new invitation.");
+$("#registerForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  if (isRegistering) return;
+
+  const code = $("#inviteCode").value.trim().toUpperCase();
+  const email = $("#registerEmail").value.trim().toLowerCase();
+  const name = $("#registerName").value.trim();
+  const password = $("#registerPassword").value;
+  let cred = null;
+  let profileCreated = false;
+
+  try {
+    isRegistering = true;
+    cred = await createUserWithEmailAndPassword(auth, email, password);
+
+    const invRef = doc(db, "invitations", code);
+    const invSnap = await getDoc(invRef);
+    if (!invSnap.exists()) throw new Error("Invitation not found. Ask your Media Director to issue a new invitation.");
+
+    const inv = invSnap.data();
+    if (inv.status !== "pending" || inv.email !== email) {
+      throw new Error("This invitation is expired, already used, or assigned to another email.");
     }
-    const inv=invSnap.data();
-    if(inv.status!=="pending"||inv.email!==email){
-      await deleteUser(cred.user); await signOut(auth);
-      throw Error("Invitation is expired, already used or assigned to another email.");
+
+    // Redeem the invitation and create the user profile atomically.
+    // Firestore rules can validate the paired writes with getAfter().
+    const batch = writeBatch(db);
+    batch.update(invRef, {
+      status: "redeemed",
+      redeemedBy: cred.user.uid,
+      redeemedAt: serverTimestamp()
+    });
+    batch.set(doc(db, "users", cred.user.uid), {
+      uid: cred.user.uid,
+      email,
+      displayName: name,
+      role: inv.role,
+      department: inv.department,
+      status: "active",
+      invitationId: code,
+      createdAt: serverTimestamp()
+    });
+    await batch.commit();
+    profileCreated = true;
+
+    try {
+      await addDoc(collection(db, "activities"), {
+        type: "invite",
+        title: "New team member registered",
+        description: `${name} joined ${inv.department}`,
+        actorUid: cred.user.uid,
+        actorName: name,
+        createdAt: serverTimestamp(),
+        readBy: []
+      });
+    } catch (activityError) {
+      console.warn("Registration activity could not be recorded:", activityError);
     }
-    await updateDoc(invRef,{status:"redeemed",redeemedBy:cred.user.uid,redeemedAt:serverTimestamp()});
-    await setDoc(doc(db,"users",cred.user.uid),{uid:cred.user.uid,email,displayName:name,role:inv.role,department:inv.department,status:"active",invitationId:code,createdAt:serverTimestamp()});
-    await addDoc(collection(db,"activities"),{type:"invite",title:"New team member registered",description:`${name} joined ${inv.department}`,actorUid:cred.user.uid,actorName:name,createdAt:serverTimestamp(),readBy:[]});
-    isRegistering=false;
+
+    isRegistering = false;
     await enterApp(cred.user);
     toast("Account created. Welcome to Agape Media Studio.");
-  }catch(err){isRegistering=false;console.error(err);toast(err.message||"Registration failed.");}
+  } catch (err) {
+    console.error("Registration error:", err);
+    if (cred && !profileCreated) {
+      try { await deleteUser(cred.user); }
+      catch (cleanupError) { console.error("Auth cleanup failed:", cleanupError); }
+    }
+    isRegistering = false;
+    toast(err.message || "Registration failed. Please try again.");
+  }
 });
 $("#logoutBtn").addEventListener("click",async()=>{stopCamera();if(unsubscribeActivity)unsubscribeActivity();await signOut(auth);});
 $("#refreshBtn").addEventListener("click",()=>loadData().then(()=>toast("Workspace refreshed.")));
