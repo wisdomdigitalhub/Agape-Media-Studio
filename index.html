@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101010">
+  <meta name="description" content="Agape Media Studio — the media production workspace of Agape Methodist Church.">
+  <title>Agape Media Studio</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
+  <style>
+:root{--bg:#0d0e0f;--panel:#151719;--panel2:#1b1e20;--line:#292d2f;--gold:#d7b56d;--gold2:#f0d79c;--text:#f4f1e9;--muted:#969b9c;--green:#83c99b;--red:#e58a83;--radius:16px;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-size:14px}button,input,select,textarea{font:inherit}button{cursor:pointer}.hidden{display:none!important}.muted{color:var(--muted)}.tiny{font-size:11px;line-height:1.6}.eyebrow{font-size:10px;letter-spacing:2px;font-weight:800;color:#a8a8a1}.gold{color:var(--gold)}.auth-shell{min-height:100vh;display:grid;grid-template-columns:1.05fr 1fr;background:radial-gradient(circle at 20% 20%,#282116 0,transparent 38%),var(--bg)}.auth-art{padding:9vh 9vw;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--line);background:linear-gradient(145deg,rgba(215,181,109,.09),transparent 50%)}.brand-mark{width:58px;height:58px;border:1px solid var(--gold);color:var(--gold);display:grid;place-items:center;font-family:Georgia,serif;font-size:32px;border-radius:16px;margin-bottom:34px}.brand-mark span{font-size:12px;vertical-align:top}.auth-art h1{font:500 clamp(44px,6vw,76px)/1.04 Georgia,serif;letter-spacing:-2px;margin:18px 0}.auth-art h1 em{color:var(--gold);font-weight:400}.auth-art .muted{max-width:350px;line-height:1.8}.auth-verse{margin-top:70px;color:var(--gold2);font:italic 18px Georgia,serif}.auth-panel{display:grid;place-items:center;padding:36px}.auth-card{width:min(100%,410px);padding:36px;background:rgba(21,23,25,.86);border:1px solid var(--line);border-radius:22px;box-shadow:0 30px 100px #0008}.auth-card h2{font:500 32px Georgia,serif;margin:10px 0}.auth-card form{display:grid;gap:16px;margin-top:24px}.auth-card label,.field{display:grid;gap:8px;color:#d8d8d2;font-size:12px}.auth-card input,.field input,.field select,.field textarea,.control-input{width:100%;background:#0e1011;border:1px solid #34393a;border-radius:10px;padding:13px;color:var(--text);outline:none}.auth-card input:focus,.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--gold)}.btn{border:1px solid var(--line);border-radius:10px;padding:12px 16px;color:var(--text);background:var(--panel2);font-weight:700}.btn.primary{background:linear-gradient(120deg,#c39a4e,#e8cf91);border:0;color:#17130b}.btn.full{width:100%;display:flex;justify-content:center;gap:12px}.btn.ghost{background:transparent;border-color:#4a4436;color:var(--gold2)}.btn.text{background:none;border:0;color:var(--muted)}.auth-divider{display:flex;align-items:center;gap:12px;color:#777;font-size:9px;letter-spacing:2px;margin:24px 0 16px}.auth-divider:before,.auth-divider:after{content:"";height:1px;background:var(--line);flex:1}.footer-note{text-align:center;margin-top:26px}.mobile-brand{display:none}.app-shell{min-height:100vh}.sidebar{position:fixed;inset:0 auto 0 0;width:248px;background:#111314;border-right:1px solid var(--line);padding:26px 16px;display:flex;flex-direction:column;z-index:5}.side-brand{display:flex;align-items:center;gap:12px;padding:0 10px 30px}.brand-mark.small{width:39px;height:39px;font-size:23px;border-radius:11px;margin:0}.side-brand strong,.side-brand small{display:block;letter-spacing:1.5px}.side-brand strong{font-size:13px}.side-brand small{font-size:9px;color:var(--gold);margin-top:4px}.side-label{font-size:9px;letter-spacing:1.7px;color:#727777;font-weight:800;padding:14px 12px 8px}.sidebar nav{display:grid;gap:4px}.nav-item{position:relative;display:flex;align-items:center;gap:13px;text-align:left;border:0;background:transparent;color:#aeb2b0;padding:12px;border-radius:9px;font-size:12px}.nav-item b{font-size:17px;width:18px;text-align:center;color:#a6a39a;font-weight:400}.nav-item:hover,.nav-item.active{background:#28251e;color:var(--gold2)}.nav-item.active b{color:var(--gold)}.nav-count{margin-left:auto;background:#8e6630;color:white;border-radius:20px;padding:2px 7px;font-size:10px}.sidebar-bottom{margin-top:auto;border-top:1px solid var(--line);padding:18px 8px 0;display:flex;align-items:center;gap:8px;font-size:10px;color:#8e9692}.online-dot{width:7px;height:7px;border-radius:50%;background:#68b889;box-shadow:0 0 10px #68b889}.logout{margin-left:auto;border:0;background:none;color:#c5a76a;font-size:11px}.main-area{margin-left:248px;min-height:100vh}.topbar{height:94px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 36px;background:#101213eF;position:sticky;top:0;z-index:4;backdrop-filter:blur(12px)}.topbar .eyebrow{margin:0 0 5px}.topbar h2{font:500 25px Georgia,serif;margin:0}.top-actions{display:flex;align-items:center;gap:12px}.icon-btn{width:37px;height:37px;border-radius:10px;background:#1b1e20;border:1px solid var(--line);color:#ddd;font-size:17px;position:relative}.dot{position:absolute;width:7px;height:7px;border-radius:50%;background:#e49a64;right:7px;top:7px}.user-chip{display:flex;align-items:center;gap:10px;margin-left:10px}.avatar{width:36px;height:36px;border-radius:50%;background:#3a3020;color:var(--gold2);display:grid;place-items:center;font-family:Georgia,serif}.user-chip strong,.user-chip small{display:block}.user-chip strong{font-size:11px}.user-chip small{font-size:10px;color:var(--muted);margin-top:3px}.page-content{padding:30px 36px 60px;max-width:1500px;margin:auto}.welcome-row{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:25px}.welcome-row h1{font:500 32px Georgia,serif;margin:7px 0}.welcome-row p{color:var(--muted);margin:0}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}.stat-card,.panel,.module-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius)}.stat-card{padding:19px}.stat-top{display:flex;justify-content:space-between;color:var(--muted);font-size:11px}.stat-icon{color:var(--gold);font-size:18px}.stat-number{font:500 32px Georgia,serif;margin:16px 0 5px}.stat-foot{font-size:10px;color:#858b88}.content-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:16px}.panel{padding:21px;margin-bottom:16px}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.panel-head h3,.section-title{font:500 19px Georgia,serif;margin:0}.panel-head p{margin:5px 0 0;color:var(--muted);font-size:11px}.subtle-link{border:0;background:none;color:var(--gold);font-size:11px}.empty{padding:28px 14px;text-align:center;border:1px dashed #373b3a;border-radius:12px;color:var(--muted);font-size:12px;line-height:1.7}.empty strong{display:block;color:#ddd;margin-bottom:5px}.activity-list,.record-list{display:grid;gap:10px}.activity-item,.record-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:11px;background:#1b1e20}.activity-symbol{width:34px;height:34px;border-radius:10px;background:#342b1c;color:var(--gold);display:grid;place-items:center}.activity-copy{min-width:0;flex:1}.activity-copy strong{display:block;font-size:11px}.activity-copy small{display:block;color:var(--muted);font-size:10px;margin-top:4px}.pill{display:inline-flex;align-items:center;padding:5px 9px;border-radius:30px;font-size:9px;font-weight:800;letter-spacing:.4px;background:#2c302e;color:#bfc8c2}.pill.pending{background:#3a3020;color:#e4c77f}.pill.approved,.pill.published,.pill.active{background:#20352a;color:#9ad3ae}.pill.rejected,.pill.archived{background:#3a2423;color:#e7a19b}.quick-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.quick-card{padding:17px;border:1px solid var(--line);border-radius:13px;background:#191c1d;text-align:left;color:var(--text)}.quick-card:hover{border-color:#8c7141;transform:translateY(-1px)}.quick-card .q-icon{font-size:22px;color:var(--gold)}.quick-card strong{display:block;margin:13px 0 5px;font-size:12px}.quick-card small{color:var(--muted);font-size:10px}.toolbar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}.toolbar .btn{font-size:11px}.field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}.field.full-field{grid-column:1/-1}.field textarea{min-height:85px;resize:vertical}.table-wrap{overflow:auto}.data-table{width:100%;border-collapse:collapse;min-width:560px}.data-table th{text-align:left;color:#858c89;font-size:9px;letter-spacing:1px;padding:11px;border-bottom:1px solid var(--line)}.data-table td{padding:13px 11px;border-bottom:1px solid #25292a;font-size:11px;color:#d5d7d2}.data-table tr:last-child td{border-bottom:0}.actions{display:flex;gap:6px;flex-wrap:wrap}.mini-btn{border:1px solid #3a3e3d;background:#202425;color:#d8c18c;border-radius:7px;padding:6px 8px;font-size:10px}.mini-btn.danger{color:#e6a29b}.video-stage{background:#050606;border:1px solid var(--line);border-radius:14px;min-height:250px;display:grid;place-items:center;overflow:hidden;position:relative}.video-stage video{width:100%;max-height:440px;background:#000}.video-stage .placeholder{color:#858b89;text-align:center;padding:40px}.timeline{padding:17px;background:#111415;border:1px solid var(--line);border-radius:12px;margin-top:14px}.track{height:28px;border-radius:6px;background:#262b2b;margin-top:9px;position:relative;overflow:hidden}.track-fill{position:absolute;inset:0 auto 0 0;width:42%;background:linear-gradient(90deg,#725b31,#c49d51);opacity:.8}.track-label{font-size:10px;color:#a5aaa7}.canvas-wrap{background:#090a0a;border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;place-items:center;min-height:330px}.canvas-wrap canvas{max-width:100%;height:auto;box-shadow:0 10px 35px #0008}.live-preview{background:#050606;border:1px solid var(--line);border-radius:12px;min-height:240px;display:grid;place-items:center;overflow:hidden}.live-preview video{width:100%;max-height:430px}.notice{padding:13px 15px;border:1px solid #5c4b2d;background:#282216;border-radius:10px;color:#e7d5a8;font-size:11px;line-height:1.6;margin-bottom:16px}.toast{position:fixed;right:22px;bottom:22px;z-index:20;background:#e6d09a;color:#19150c;padding:13px 18px;border-radius:10px;font-size:12px;font-weight:700;box-shadow:0 12px 40px #0008;opacity:0;transform:translateY(10px);transition:.2s;pointer-events:none}.toast.show{opacity:1;transform:translateY(0)}.mobile-only{display:none}.metric-line{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:11px}.metric-line span:last-child{color:var(--gold2)}.settings-note{color:var(--muted);font-size:11px;line-height:1.7}.file-label{display:inline-flex;align-items:center;gap:8px}.file-label input{display:none}.tag{font-size:9px;color:#bdb5a3;border:1px solid #464239;padding:4px 7px;border-radius:20px}
+@media(max-width:1050px){.stats-grid{grid-template-columns:repeat(2,1fr)}.content-grid{grid-template-columns:1fr}.quick-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:720px){.auth-shell{grid-template-columns:1fr}.auth-art{display:none}.auth-panel{padding:18px;align-content:center}.mobile-brand{display:flex;align-items:center;gap:10px;margin:10px auto 20px;font-size:10px;letter-spacing:1.5px;color:var(--gold)}.auth-card{padding:25px 20px}.sidebar{transform:translateX(-100%);transition:.25s;width:265px}.sidebar.open{transform:translateX(0);box-shadow:20px 0 80px #000b}.main-area{margin-left:0}.topbar{height:78px;padding:0 16px}.mobile-only{display:block}.topbar .eyebrow{font-size:8px}.topbar h2{font-size:21px}.top-actions{gap:6px}.user-chip{margin-left:3px}.user-chip>div:last-child{display:none}.page-content{padding:22px 15px 45px}.welcome-row{align-items:flex-start;flex-direction:column}.welcome-row h1{font-size:27px}.stats-grid{gap:9px}.stat-card{padding:14px}.stat-number{font-size:27px}.quick-grid{grid-template-columns:repeat(2,1fr)}.panel{padding:16px}.field-grid{grid-template-columns:1fr}.field.full-field{grid-column:auto}.top-actions .icon-btn:first-child{display:none}}
+
+.modal-backdrop{position:fixed;inset:0;background:#000b;z-index:30;display:grid;place-items:center;padding:18px}.modal-card{width:min(100%,560px);max-height:90vh;overflow:auto;background:#171a1b;border:1px solid #484239;border-radius:16px;padding:22px;box-shadow:0 30px 90px #000}.modal-card .panel-head{margin-bottom:20px}.modal-card .panel-head h3{font:500 20px Georgia,serif;margin:0}.modal-card form{display:grid;gap:14px}.modal-card input,.modal-card select,.modal-card textarea{width:100%;background:#0e1011;border:1px solid #34393a;border-radius:9px;padding:11px;color:var(--text)}
+
+  </style>
+</head>
+<body>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <section id="authView" class="auth-shell">
+    <div class="auth-art">
+      <div class="brand-mark">A<span>+</span></div>
+      <p class="eyebrow">AGAPE METHODIST CHURCH</p>
+      <h1>Stories that<br><em>serve a purpose.</em></h1>
+      <p class="muted">A unified creative workspace for the people behind the message.</p>
+      <div class="auth-verse">“Rooted In Christ growing in Love”</div>
+    </div>
+    <div class="auth-panel">
+      <div class="mobile-brand"><span class="brand-mark small">A<span>+</span></span><span>AGAPE MEDIA STUDIO</span></div>
+      <div class="auth-card">
+        <p class="eyebrow gold">PRIVATE TEAM WORKSPACE</p>
+        <h2 id="authHeading">Welcome back</h2>
+        <p id="authSub" class="muted">Sign in with your invited team account.</p>
+        <form id="loginForm">
+          <label>Email address<input id="loginEmail" type="email" autocomplete="username" required placeholder="name@example.com"></label>
+          <label>Password<input id="loginPassword" type="password" autocomplete="current-password" required placeholder="Your password"></label>
+          <button class="btn primary full" type="submit">Sign in <span>→</span></button>
+        </form>
+        <div class="auth-divider"><span>INVITATION ONLY</span></div>
+        <button id="showRegister" class="btn ghost full" type="button">I have an invitation code</button>
+        <form id="registerForm" class="hidden">
+          <label>Invitation code<input id="inviteCode" required autocomplete="off" placeholder="Enter your invitation code"></label>
+          <label>Full name<input id="registerName" required maxlength="80" placeholder="Your full name"></label>
+          <label>Email address<input id="registerEmail" type="email" required placeholder="Must match your invitation"></label>
+          <label>Create password<input id="registerPassword" type="password" minlength="8" required placeholder="At least 8 characters"></label>
+          <button class="btn primary full" type="submit">Verify invitation & create account</button>
+          <button id="backToLogin" class="btn text full" type="button">Back to sign in</button>
+        </form>
+        <p class="tiny muted">Access is granted by the Media Director or an authorized administrator.</p>
+      </div>
+      <p class="tiny muted footer-note">Agape Media Studio · Secure team access</p>
+    </div>
+  </section>
+
+  <section id="appView" class="app-shell hidden">
+    <aside class="sidebar" id="sidebar">
+      <div class="side-brand"><div class="brand-mark small">A<span>+</span></div><div><strong>AGAPE</strong><small>MEDIA STUDIO</small></div></div>
+      <div class="side-label">WORKSPACE</div>
+      <nav id="mainNav">
+        <button class="nav-item active" data-page="overview"><b>⌂</b> Overview</button>
+        <button class="nav-item" data-page="video"><b>▣</b> Video Studio</button>
+        <button class="nav-item" data-page="graphics"><b>✧</b> Graphics Studio</button>
+        <button class="nav-item" data-page="live"><b>◉</b> Live Studio</button>
+        <button class="nav-item" data-page="library"><b>▤</b> Media Library</button>
+        <button class="nav-item" data-page="approvals"><b>✓</b> Approvals <span id="approvalBadge" class="nav-count hidden">0</span></button>
+        <button class="nav-item" data-page="publishing"><b>↗</b> Publishing</button>
+      </nav>
+      <div class="side-label">MANAGEMENT</div>
+      <nav>
+        <button class="nav-item" data-page="team"><b>♙</b> Team & Invitations</button>
+        <button class="nav-item" data-page="activity"><b>◷</b> Activity Centre</button>
+        <button class="nav-item" data-page="analytics"><b>▥</b> Analytics</button>
+        <button class="nav-item" data-page="settings"><b>⚙</b> Settings</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="online-dot"></div><span>Firebase connected</span>
+        <button id="logoutBtn" class="logout">Sign out ↗</button>
+      </div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar">
+        <button id="menuToggle" class="icon-btn mobile-only" aria-label="Open menu">☰</button>
+        <div><p class="eyebrow gold" id="pageEyebrow">AGAPE METHODIST CHURCH</p><h2 id="pageTitle">Overview</h2></div>
+        <div class="top-actions">
+          <button class="icon-btn" id="refreshBtn" title="Refresh">↻</button>
+          <button class="icon-btn notification-btn" data-page="activity" title="Activity">♧<i id="activityDot" class="dot hidden"></i></button>
+          <div class="user-chip"><div class="avatar" id="userAvatar">A</div><div><strong id="userName">Team member</strong><small id="userRole">Member</small></div></div>
+        </div>
+      </header>
+      <div id="pageContent" class="page-content"></div>
+    </main>
+  </section>
+  <script type="module">
+const firebaseConfig = {
+  apiKey: "AIzaSyDJ4-8kmLg9gBbvI412s24NAjA_vP78ajs",
+  authDomain: "agape-media-studio.firebaseapp.com",
+  projectId: "agape-media-studio",
+  storageBucket: "agape-media-studio.firebasestorage.app",
+  messagingSenderId: "152684722667",
+  appId: "1:152684722667:web:136741b86c9645f20701ae"
+};
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-app.js";
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, deleteUser, signOut, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js";
+import { getFirestore, doc, getDoc, setDoc, addDoc, collection, query, where, orderBy, limit, getDocs, updateDoc, serverTimestamp, onSnapshot, writeBatch } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-firestore.js";
+import { firebaseConfig } from "./firebase-config.js";
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const $ = (s, root=document) => root.querySelector(s);
+const $$ = (s, root=document) => [...root.querySelectorAll(s)];
+const DEPARTMENTS = ["Photography","Videography","Video Editing","Graphics Design","Livestream","Sound Engineering","Social Media","Projection"];
+const ROLE_LABELS = {superAdmin:"Super Administrator",churchAdmin:"Church Administrator",mediaDirector:"Media Director",liveProducer:"Live Producer",videoEditor:"Video Editor",graphicsDesigner:"Graphics Designer",cameraOperator:"Camera Operator",mediaVolunteer:"Media Volunteer",viewer:"Viewer"};
+const ADMIN_ROLES = ["superAdmin","churchAdmin","mediaDirector"];
+let isRegistering=false;
+let currentUser=null, profile=null, activePage="overview", projects=[], activities=[], team=[], approvals=[], publishing=[], mediaRecords=[], unsubscribeActivity=null, localVideoUrl=null, liveStream=null;
+const canManage = () => profile && ADMIN_ROLES.includes(profile.role);
+const canApprove = () => profile && ["superAdmin","churchAdmin","mediaDirector"].includes(profile.role);
+const esc = s => String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const stamp = v => { try { const d=v?.toDate?v.toDate():new Date(v); return isNaN(d)? "—":d.toLocaleString(); } catch{return "—";} };
+const toast = msg => { const t=$("#toast"); t.textContent=msg; t.classList.add("show"); setTimeout(()=>t.classList.remove("show"),2800); };
+const showAuth = () => { $("#authView").classList.remove("hidden"); $("#appView").classList.add("hidden"); };
+const showApp = () => { $("#authView").classList.add("hidden"); $("#appView").classList.remove("hidden"); };
+const addActivity = async (type,title,description="") => {
+  if(!currentUser) return;
+  await addDoc(collection(db,"activities"),{type,title,description,actorUid:currentUser.uid,actorName:profile?.displayName||currentUser.email,createdAt:serverTimestamp(),readBy:[]});
+};
+const getRows = async (name, sortField="createdAt", max=100) => {
+  const q=query(collection(db,name),orderBy(sortField,"desc"),limit(max));
+  const snap=await getDocs(q); return snap.docs.map(d=>({id:d.id,...d.data()}));
+};
+async function loadData(){
+  const [p,a,t,ap,pub,m]=await Promise.all([
+    getRows("projects"),getRows("activities"),(canManage()?getRows("users","displayName"):Promise.resolve([profile])),getRows("approvals"),getRows("publishing"),getRows("mediaLibrary")
+  ]);
+  projects=p; activities=a; team=t; approvals=ap; publishing=pub; mediaRecords=m;
+  renderPage();
+}
+function subscribeActivity(){
+  if(unsubscribeActivity) unsubscribeActivity();
+  const q=query(collection(db,"activities"),orderBy("createdAt","desc"),limit(8));
+  unsubscribeActivity=onSnapshot(q,s=>{activities=s.docs.map(d=>({id:d.id,...d.data()})); if(activePage==="overview"||activePage==="activity")renderPage(); const unread=activities.some(a=>!(a.readBy||[]).includes(currentUser.uid));$("#activityDot").classList.toggle("hidden",!unread);},e=>console.warn(e));
+}
+async function enterApp(user){
+  currentUser=user;
+  const snap=await getDoc(doc(db,"users",user.uid));
+  if(!snap.exists()){await signOut(auth);showAuth();toast("Your account has no approved studio profile. Contact the administrator.");return;}
+  profile={uid:user.uid,...snap.data()};
+  if(profile.status!=="active"){await signOut(auth);showAuth();toast("Your team access is not active. Contact an administrator.");return;}
+  $("#userName").textContent=profile.displayName||user.email;
+  $("#userRole").textContent=ROLE_LABELS[profile.role]||"Team member";
+  $("#userAvatar").textContent=(profile.displayName||user.email||"A").slice(0,1).toUpperCase();
+  showApp(); await loadData(); subscribeActivity(); navigate("overview");
+}
+function navigate(page){
+  activePage=page;
+  $$(".nav-item").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
+  $("#sidebar").classList.remove("open");
+  const names={overview:"Overview",video:"Video Studio",graphics:"Graphics Studio",live:"Live Studio",library:"Media Library",approvals:"Approvals",publishing:"Publishing",team:"Team & Invitations",activity:"Activity Centre",analytics:"Analytics",settings:"Settings"};
+  $("#pageTitle").textContent=names[page]||"Overview";
+  $("#pageEyebrow").textContent="AGAPE METHODIST CHURCH";
+  renderPage();
+}
+function empty(title,desc){return `<div class="empty"><strong>${esc(title)}</strong>${esc(desc)}</div>`;}
+function stat(label,value,icon,foot){return `<div class="stat-card"><div class="stat-top"><span>${label}</span><span class="stat-icon">${icon}</span></div><div class="stat-number">${value}</div><div class="stat-foot">${foot}</div></div>`;}
+function activityMarkup(a){return `<div class="activity-item"><div class="activity-symbol">${({project:"▣",invite:"♙",approval:"✓",publish:"↗",media:"▤"}[a.type]||"◷")}</div><div class="activity-copy"><strong>${esc(a.title)}</strong><small>${esc(a.description||a.actorName||"Studio activity")} · ${stamp(a.createdAt)}</small></div></div>`;}
+function projectTable(rows=projects){if(!rows.length)return empty("No projects yet","Create a project to start organizing a media assignment.");return `<div class="table-wrap"><table class="data-table"><thead><tr><th>PROJECT</th><th>CATEGORY</th><th>STATUS</th><th>UPDATED</th><th>ACTION</th></tr></thead><tbody>${rows.map(p=>`<tr><td><strong>${esc(p.title)}</strong><br><span class="muted">${esc(p.programme||"")}</span></td><td>${esc(p.category||"—")}</td><td><span class="pill ${esc(p.status||"pending")}">${esc(p.status||"draft")}</span></td><td>${stamp(p.updatedAt||p.createdAt)}</td><td><button class="mini-btn" data-open-project="${p.id}">Open</button></td></tr>`).join("")}</tbody></table></div>`;}
+function renderPageBase(){
+  if(!profile)return;
+  const content=$("#pageContent");
+  const pending=approvals.filter(a=>a.status==="pending").length;
+  $("#approvalBadge").textContent=pending;$("#approvalBadge").classList.toggle("hidden",!pending);
+  if(activePage==="overview"){
+    content.innerHTML=`<div class="welcome-row"><div><p class="eyebrow gold">YOUR CREATIVE WORKSPACE</p><h1>Welcome, ${esc((profile.displayName||"Team").split(" ")[0])}.</h1><p>Plan, create and coordinate media that shares the message of Christ.</p></div><button class="btn primary" id="newProjectBtn">＋ New project</button></div>
+    <div class="stats-grid">${stat("TOTAL PROJECTS",projects.length,"▣","All studio projects")}${stat("PENDING APPROVALS",pending,"✓","Awaiting review")}${stat("TEAM MEMBERS",team.length,"♙","Registered profiles")}${stat("PUBLISHED RECORDS",publishing.filter(x=>x.status==="published").length,"↗","Publishing log")}</div>
+    <div class="content-grid"><section class="panel"><div class="panel-head"><div><h3>Recent projects</h3><p>Latest work across the studio</p></div><button class="subtle-link" data-page="video">View all →</button></div>${projectTable(projects.slice(0,5))}</section>
+    <section class="panel"><div class="panel-head"><div><h3>Recent activity</h3><p>What's happening in the studio</p></div><button class="subtle-link" data-page="activity">All activity →</button></div><div class="activity-list">${activities.length?activities.slice(0,6).map(activityMarkup).join(""):empty("No activity yet","New team and project activity will appear here.")}</div></section></div>
+    <section class="panel"><div class="panel-head"><div><h3>Quick access</h3><p>Start with a creative workspace</p></div></div><div class="quick-grid"><button class="quick-card" data-page="video"><span class="q-icon">▣</span><strong>Video Studio</strong><small>Preview and organize local video work</small></button><button class="quick-card" data-page="graphics"><span class="q-icon">✧</span><strong>Graphics Studio</strong><small>Create a church graphic locally</small></button><button class="quick-card" data-page="live"><span class="q-icon">◉</span><strong>Live Studio</strong><small>Camera preview and OBS workflow</small></button></div></section>`;
+  } else if(activePage==="video"){
+    content.innerHTML=`<div class="welcome-row"><div><p class="eyebrow gold">LOCAL VIDEO WORKSPACE</p><h1>Video Studio</h1><p>Preview local footage and record project details. Media files stay on this device.</p></div><button class="btn primary" id="newProjectBtn">＋ New project</button></div>
+    <div class="notice">This browser-only studio provides local preview and project organization. It is not a full professional multi-track renderer. It does not upload footage or promise 4K enhancement. Export features depend on browser support.</div>
+    <section class="panel"><div class="panel-head"><div><h3>Footage preview</h3><p>Choose a video stored on your device</p></div><label class="btn ghost file-label">＋ Import video<input id="videoFile" type="file" accept="video/*"></label></div><div class="video-stage" id="videoStage"><div class="placeholder">▣<br><br>Select a local video to preview it here.</div></div><div class="toolbar" style="margin-top:13px"><button class="btn" id="setIn">Set in point</button><button class="btn" id="setOut">Set out point</button><button class="btn" id="clearVideo">Clear preview</button></div><div class="timeline"><div class="track-label">LOCAL TIMELINE · PREVIEW ONLY</div><div class="track"><div class="track-fill" id="timelineFill"></div></div><p class="tiny muted" id="trimInfo">Import a clip to begin. Trim points are temporary and are not a rendered edit.</p></div></section>
+    <section class="panel"><div class="panel-head"><div><h3>Project workspace</h3><p>Save a production brief to Firestore</p></div></div>${projectTable()}</section>`;
+  } else if(activePage==="graphics"){
+    content.innerHTML=`<div class="welcome-row"><div><p class="eyebrow gold">LOCAL CANVAS DESIGN</p><h1>Graphics Studio</h1><p>Create a simple announcement graphic and download it as PNG.</p></div></div>
+    <div class="content-grid"><section class="panel"><div class="panel-head"><div><h3>Design canvas</h3><p>Gold-and-black church announcement template</p></div></div><div class="canvas-wrap"><canvas id="graphicCanvas" width="1080" height="1080"></canvas></div><div class="toolbar" style="margin-top:14px"><button class="btn primary" id="downloadGraphic">Download PNG</button><button class="btn" id="redrawGraphic">Refresh design</button></div></section>
+    <section class="panel"><div class="panel-head"><div><h3>Graphic content</h3><p>Update the text on your design</p></div></div><div class="field-grid"><label class="field full-field">Main heading<input id="graphicHeading" value="SUNDAY WORSHIP"></label><label class="field full-field">Subheading<input id="graphicSub" value="A time in God's presence"></label><label class="field full-field">Date / time<input id="graphicDate" value="SUNDAY · 10:00 AM"></label><label class="field full-field">Footer<input id="graphicFooter" value="AGAPE METHODIST CHURCH"></label></div><p class="settings-note">Upload your official church logo in a future branding update; this starter does not invent or imitate the official logo.</p></section></div>`;
+    drawGraphic();
+  } else if(activePage==="live"){
+    content.innerHTML=`<div class="welcome-row"><div><p class="eyebrow gold">PRODUCTION CONTROL</p><h1>Live Studio</h1><p>Prepare your camera and microphone, then run the broadcast through OBS.</p></div></div>
+    <div class="notice">Camera preview and local recording are browser features only. This page does not broadcast to the public, receive a stream key or relay video. Use OBS and your approved streaming destination for the actual broadcast.</div>
+    <div class="content-grid"><section class="panel"><div class="panel-head"><div><h3>Camera & microphone preview</h3><p>Allow browser permission when prompted</p></div><span class="pill" id="cameraStatus">OFFLINE</span></div><div class="live-preview" id="livePreview"><div class="placeholder muted">◉<br><br>Camera preview will appear here.</div></div><div class="toolbar" style="margin-top:14px"><button class="btn primary" id="startCamera">Start preview</button><button class="btn" id="stopCamera">Stop preview</button><button class="btn" id="recordCamera">Start local recording</button></div><a id="recordingDownload" class="subtle-link hidden" download="agape-local-recording.webm">Download recording</a></section>
+    <section class="panel"><div class="panel-head"><div><h3>OBS service run-sheet</h3><p>Suggested scene order</p></div></div>${["Opening / countdown","Worship","Preaching","Scripture / lower third","Announcements","Closing"].map((x,i)=>`<div class="metric-line"><span>${String(i+1).padStart(2,"0")} · ${x}</span><span>Scene</span></div>`).join("")}<p class="settings-note">Create matching scenes in OBS. You can use local browser overlays, but this application does not connect to OBS automatically.</p><a href="https://obsproject.com/" target="_blank" rel="noopener" class="subtle-link">Visit OBS Project ↗</a></section></div>`;
+  } else if(activePage==="library"){
+    content.innerHTML=`<div class="welcome-row"><div><p class="eyebrow gold">MEDIA REGISTER</p><h1>Media Library</h1><p>Keep a searchable register of media stored on team devices.</p></div><button class="btn primary" id="addMediaBtn">＋ Add media record</button></div><div class="notice">Actual video, audio and image files are not uploaded to Firebase. This library stores metadata and optional local file names only. Files remain on the device where they are stored.</div><section class="panel"><div class="panel-head"><h3>Registered media</h3></div>${mediaRecords.length?`<div class="table-wrap"><table class="data-table"><thead><tr><th>NAME</th><th>TYPE</th><th>PROJECT</th><th>ADDED BY</th><th>DATE</th></tr></thead><tbody>${mediaRecords.map(m=>`<tr><td>${esc(m.name)}</td><td>${esc(m.mediaType)}</td><td>${esc(m.projectTitle||"—")}</td><td>${esc(m.addedByName||"—")}</td><td>${stamp(m.createdAt)}</td></tr>`).join("")}</tbody></table></div>`:empty("Your media register is empty","Add a record for a media file stored locally.")}</section>`;
+  } else if(activePage==="approvals"){
+    const rows=approvals.filter(a=>canApprove()||a.submittedBy===currentUser.uid);
+    content.innerHTML=`<div class="welcome-row"><div><p class="eyebrow gold">QUALITY CONTROL</p><h1>Approvals</h1><p>Review production submissions before publication.</p></div></div><section class="panel"><div class="panel-head"><h3>Review queue</h3></div>${rows.length?`<div class="table-wrap"><table class="data-table"><thead><tr><th>SUBMISSION</th><th>PROJECT</th><th>STATUS</th><th>SUBMITTED</th><th>ACTION</th></tr></thead><tbody>${rows.map(a=>`<tr><td>${esc(a.title)}</td><td>${esc(a.projectTitle||"—")}</td><td><span class="pill ${esc(a.status)}">${esc(a.status)}</span></td><td>${stamp(a.createdAt)}</td><td>${canApprove()&&a.status==="pending"?`<button class="mini-btn" data-approve="${a.id}">Approve</button><button class="mini-btn danger" data-reject="${a.id}">Return</button>`:"—"}</td></tr>`).join("")}</tbody></table></div>`:empty("No submissions to review","New submissions will appear here.")}</section>`;
+  } else if(activePage==="publishing"){
+    content.innerHTML=`<div class="welcome-row"><div><p class="eyebrow gold">DISTRIBUTION REGISTER</p><h1>Publishing</h1><p>Record where approved church media has been published.</p></div><button class="btn primary" id="addPublishBtn">＋ Record publication</button></div><section class="panel"><div class="panel-head"><h3>Publishing history</h3></div>${publishing.length?`<div class="table-wrap"><table class="data-table"><thead><tr><th>CONTENT</th><th>PLATFORM</th><th>STATUS</th><th>LINK</th><th>DATE</th></tr></thead><tbody>${publishing.map(x=>`<tr><td>${esc(x.title)}</td><td>${esc(x.platform)}</td><td><span class="pill ${esc(x.status)}">${esc(x.status)}</span></td><td>${x.url?`<a class="subtle-link" href="${esc(x.url)}" target="_blank" rel="noopener">Open ↗</a>`:"—"}</td><td>${stamp(x.createdAt)}</td></tr>`).join("")}</tbody></table></div>`:empty("No publication records","Record a publication after posting content manually.")}</section>`;
+  } else if(activePage==="team"){
+    content.innerHTML=`<div class="welcome-row"><div><p class="eyebrow gold">PEOPLE & PERMISSIONS</p><h1>Team & Invitations</h1><p>Manage studio profiles and issue email-bound invitations.</p></div>${canManage()?'<button class="btn primary" id="inviteBtn">＋ Create invitation</button>':""}</div><div class="notice">Invitation registration requires a pre-created invitation document. Only administrators can issue invitations. The first Super Administrator must be provisioned manually in Firebase Console as described in the README.</div><section class="panel"><div class="panel-head"><h3>Studio team</h3></div>${team.length?`<div class="table-wrap"><table class="data-table"><thead><tr><th>NAME</th><th>EMAIL</th><th>ROLE</th><th>DEPARTMENT</th><th>STATUS</th></tr></thead><tbody>${team.map(u=>`<tr><td>${esc(u.displayName||"—")}</td><td>${esc(u.email||"—")}</td><td>${esc(ROLE_LABELS[u.role]||u.role)}</td><td>${esc(u.department||"—")}</td><td><span class="pill ${esc(u.status)}">${esc(u.status)}</span></td></tr>`).join("")}</tbody></table></div>`:empty("No team profiles","The first administrator profile must be provisioned manually.")}</section>`;
+  } else if(activePage==="activity"){
+    content.innerHTML=`<div class="welcome-row"><div><p class="eyebrow gold">STUDIO UPDATES</p><h1>Activity Centre</h1><p>New projects, registrations, approvals and publishing records.</p></div><button class="btn" id="markReadBtn">Mark visible as read</button></div><section class="panel"><div class="panel-head"><h3>Latest activity</h3></div><div class="activity-list">${activities.length?activities.map(activityMarkup).join(""):empty("No activity yet","Studio activity will be recorded here.")}</div></section>`;
+  } else if(activePage==="analytics"){
+    content.innerHTML=`<div class="welcome-row"><div><p class="eyebrow gold">STUDIO OVERVIEW</p><h1>Analytics</h1><p>Counts based on records in Firestore.</p></div></div><div class="stats-grid">${stat("PROJECTS",projects.length,"▣","Recorded projects")}${stat("TEAM",team.length,"♙","User profiles")}${stat("APPROVALS",approvals.length,"✓","All review records")}${stat("MEDIA RECORDS",mediaRecords.length,"▤","Metadata entries")}</div><section class="panel"><h3 class="section-title">Workflow breakdown</h3><div class="metric-line"><span>Draft projects</span><span>${projects.filter(x=>x.status==="draft").length}</span></div><div class="metric-line"><span>In progress</span><span>${projects.filter(x=>x.status==="in progress").length}</span></div><div class="metric-line"><span>Awaiting approval</span><span>${projects.filter(x=>x.status==="pending").length}</span></div><div class="metric-line"><span>Published records</span><span>${publishing.filter(x=>x.status==="published").length}</span></div><p class="settings-note">These are application-record counts, not social reach, watch time or broadcast analytics.</p></section>`;
+  } else if(activePage==="settings"){
+    content.innerHTML=`<div class="welcome-row"><div><p class="eyebrow gold">STUDIO PREFERENCES</p><h1>Settings</h1><p>Application information and account controls.</p></div></div><section class="panel"><h3 class="section-title">Studio identity</h3><div class="metric-line"><span>Studio</span><span>Agape Media Studio</span></div><div class="metric-line"><span>Church</span><span>Agape Methodist Church</span></div><div class="metric-line"><span>Location</span><span>Beson Street, Dixville Township, Monrovia</span></div><div class="metric-line"><span>Motto</span><span>Rooted In Christ growing in Love</span></div><div class="metric-line"><span>Backend</span><span>Firebase Authentication + Firestore</span></div><div class="metric-line"><span>Media storage</span><span>Local device only</span></div></section><section class="panel"><h3 class="section-title">Your account</h3><p class="settings-note">${esc(profile.displayName)} · ${esc(currentUser.email)} · ${esc(ROLE_LABELS[profile.role]||profile.role)}</p><button id="resetPassword" class="btn">Send password reset email</button></section><section class="panel"><h3 class="section-title">Application limits</h3><p class="settings-note">This app is a static browser application. It has no cloud rendering, no automatic social publishing, no live broadcast relay and no shared cloud media storage. Firestore rules enforce access to application records. Device-local media must be managed separately on each device.</p></section>`;
+  }
+}
+function openModal(title,body,onSubmit){
+  const old=$("#modal");if(old)old.remove();
+  const wrap=document.createElement("div");wrap.id="modal";wrap.className="modal-backdrop";
+  wrap.innerHTML=`<div class="modal-card"><div class="panel-head"><h3>${esc(title)}</h3><button class="mini-btn" id="closeModal">✕</button></div><form id="modalForm">${body}<div class="toolbar" style="margin-top:20px"><button class="btn primary" type="submit">Save</button><button class="btn" type="button" id="cancelModal">Cancel</button></div></form></div>`;
+  document.body.append(wrap);$("#closeModal").onclick=$("#cancelModal").onclick=()=>wrap.remove();
+  $("#modalForm").onsubmit=async e=>{e.preventDefault();const fd=new FormData(e.currentTarget);try{await onSubmit(fd);wrap.remove();}catch(err){console.error(err);toast(err.message||"Could not save record.");}};
+}
+function field(name,label,placeholder="",required=true){return `<label class="field">${label}<input name="${name}" ${required?"required":""} placeholder="${placeholder}"></label>`;}
+async function createProject(){
+  openModal("Create media project",`${field("title","Project title","e.g. Sunday Worship")}${field("programme","Programme / event","Sunday service",false)}<label class="field">Category<select name="category">${["Video","Photography","Graphics","Livestream","Audio","Social Media","Projection"].map(x=>`<option>${x}</option>`).join("")}</select></label><label class="field">Department<select name="department">${DEPARTMENTS.map(x=>`<option>${x}</option>`).join("")}</select></label><label class="field">Description<textarea name="description" placeholder="Brief project details"></textarea></label>`,async fd=>{const data={title:fd.get("title"),programme:fd.get("programme"),category:fd.get("category"),department:fd.get("department"),description:fd.get("description"),status:"draft",createdBy:currentUser.uid,createdByName:profile.displayName,createdAt:serverTimestamp(),updatedAt:serverTimestamp()};await addDoc(collection(db,"projects"),data);await addActivity("project","New project created",data.title);await loadData();toast("Project created.");});
+}
+async function createInvitation(){
+  if(!canManage())return;
+  const roles=Object.entries(ROLE_LABELS).filter(([r])=>profile.role==="superAdmin"||!["superAdmin","churchAdmin"].includes(r));
+  openModal("Create team invitation",`${field("email","Invitee email","person@example.com")}<label class="field">Assigned role<select name="role">${roles.map(([r,l])=>`<option value="${r}">${l}</option>`).join("")}</select></label><label class="field">Department<select name="department">${DEPARTMENTS.map(x=>`<option>${x}</option>`).join("")}</select></label><label class="field">Invitation code<input name="code" required minlength="12" value="${crypto.randomUUID().replaceAll("-","").slice(0,16).toUpperCase()}"></label>`,async fd=>{const email=fd.get("email").trim().toLowerCase(),code=fd.get("code").trim().toUpperCase();const ref=doc(db,"invitations",code);if((await getDoc(ref)).exists())throw Error("That invitation code already exists.");await setDoc(ref,{email,role:fd.get("role"),department:fd.get("department"),status:"pending",createdBy:currentUser.uid,createdAt:serverTimestamp(),redeemedBy:null,redeemedAt:null});await addActivity("invite","Team invitation created",`Invitation issued for ${email}`);await navigator.clipboard?.writeText(code).catch(()=>{});toast("Invitation created. Share the code securely with the invited person.");await loadData();});
+}
+async function addMedia(){
+  openModal("Add media record",`${field("name","Media name","Sunday sermon final.mp4")}<label class="field">Media type<select name="mediaType"><option>Video</option><option>Audio</option><option>Image</option><option>Graphic</option><option>Other</option></select></label>${field("projectTitle","Related project","Sunday service",false)}${field("localFileName","Local file name (optional)","sermon-final.mp4",false)}`,async fd=>{const d={name:fd.get("name"),mediaType:fd.get("mediaType"),projectTitle:fd.get("projectTitle"),localFileName:fd.get("localFileName"),addedBy:currentUser.uid,addedByName:profile.displayName,createdAt:serverTimestamp()};await addDoc(collection(db,"mediaLibrary"),d);await addActivity("media","Media record added",d.name);await loadData();toast("Media record saved.");});
+}
+async function addPublication(){
+  openModal("Record publication",`${field("title","Content title","Sunday sermon highlights")}<label class="field">Platform<select name="platform"><option>YouTube</option><option>Facebook</option><option>Instagram</option><option>WhatsApp</option><option>Church website</option><option>Other</option></select></label><label class="field">Status<select name="status"><option value="published">Published</option><option value="scheduled">Scheduled</option><option value="draft">Draft</option></select></label>${field("url","Published URL (optional)","https://",false)}`,async fd=>{const d={title:fd.get("title"),platform:fd.get("platform"),status:fd.get("status"),url:fd.get("url"),createdBy:currentUser.uid,createdAt:serverTimestamp()};await addDoc(collection(db,"publishing"),d);await addActivity("publish","Publication record added",d.title);await loadData();toast("Publication record saved.");});
+}
+async function reviewApproval(id,status){
+  if(!canApprove())return;
+  const ref=doc(db,"approvals",id);await updateDoc(ref,{status,reviewedBy:currentUser.uid,reviewedByName:profile.displayName,reviewedAt:serverTimestamp()});
+  await addActivity("approval",status==="approved"?"Submission approved":"Submission returned",id);await loadData();toast("Review updated.");
+}
+function drawGraphic(){
+  const c=$("#graphicCanvas");if(!c)return;const x=c.getContext("2d"),w=c.width,h=c.height;
+  const g=x.createLinearGradient(0,0,w,h);g.addColorStop(0,"#171512");g.addColorStop(1,"#080909");x.fillStyle=g;x.fillRect(0,0,w,h);
+  x.strokeStyle="#b99552";x.lineWidth=5;x.strokeRect(55,55,w-110,h-110);x.strokeStyle="#5d4a2a";x.lineWidth=2;x.strokeRect(76,76,w-152,h-152);
+  x.fillStyle="#d8b76e";x.font="bold 26px Arial";x.textAlign="center";x.fillText("AGAPE METHODIST CHURCH",w/2,220);
+  x.fillStyle="#f4ead1";x.font="bold 78px Georgia";wrapCanvas(x,$("#graphicHeading")?.value||"SUNDAY WORSHIP",w/2,470,850,95);
+  x.fillStyle="#cdbb94";x.font="38px Georgia";wrapCanvas(x,$("#graphicSub")?.value||"",w/2,650,820,52);
+  x.fillStyle="#d8b76e";x.font="bold 30px Arial";x.fillText($("#graphicDate")?.value||"",w/2,820);
+  x.fillStyle="#9e9b91";x.font="24px Arial";x.fillText($("#graphicFooter")?.value||"",w/2,920);
+  x.fillStyle="#cdbb94";x.font="italic 25px Georgia";x.fillText("Rooted In Christ growing in Love",w/2,980);
+}
+function wrapCanvas(ctx,text,x,y,maxWidth,lineHeight){const words=String(text).split(" ");let line="",yy=y;for(const word of words){const test=line?line+" "+word:word;if(ctx.measureText(test).width>maxWidth&&line){ctx.fillText(line,x,yy);line=word;yy+=lineHeight;}else line=test;}ctx.fillText(line,x,yy);}
+async function initVideo(file){
+  if(localVideoUrl)URL.revokeObjectURL(localVideoUrl);localVideoUrl=URL.createObjectURL(file);
+  $("#videoStage").innerHTML=`<video id="localVideo" controls playsinline src="${localVideoUrl}"></video>`;
+  const v=$("#localVideo");v.onloadedmetadata=()=>{$("#trimInfo").textContent=`${file.name} · ${v.duration.toFixed(1)} seconds · Set in/out points for reference only.`;};
+}
+let trimIn=null,trimOut=null,mediaRecorder=null,recordedChunks=[];
+async function startCamera(){
+  try{liveStream=await navigator.mediaDevices.getUserMedia({video:true,audio:true});$("#livePreview").innerHTML="<video autoplay muted playsinline></video>";$("#livePreview video").srcObject=liveStream;$("#cameraStatus").textContent="PREVIEW ACTIVE";toast("Camera preview started.");}
+  catch(e){toast("Camera access failed: "+e.message);}
+}
+function stopCamera(){if(liveStream)liveStream.getTracks().forEach(t=>t.stop());liveStream=null;if($("#livePreview"))$("#livePreview").innerHTML='<div class="placeholder muted">Camera preview stopped.</div>';if($("#cameraStatus"))$("#cameraStatus").textContent="OFFLINE";}
+async function recordCamera(){
+  if(!liveStream){toast("Start camera preview first.");return;}
+  if(mediaRecorder?.state==="recording"){mediaRecorder.stop();$("#recordCamera").textContent="Start local recording";return;}
+  try{recordedChunks=[];mediaRecorder=new MediaRecorder(liveStream);mediaRecorder.ondataavailable=e=>{if(e.data.size)recordedChunks.push(e.data);};mediaRecorder.onstop=()=>{const blob=new Blob(recordedChunks,{type:mediaRecorder.mimeType||"video/webm"}),url=URL.createObjectURL(blob);const a=$("#recordingDownload");a.href=url;a.classList.remove("hidden");toast("Local recording is ready to download.");};mediaRecorder.start();$("#recordCamera").textContent="Stop recording";toast("Local recording started.");}
+  catch(e){toast("Recording is not supported by this browser.");}
+}
+function bindPageActions(){
+  $("#newProjectBtn")?.addEventListener("click",createProject);
+  $("#inviteBtn")?.addEventListener("click",createInvitation);
+  $("#addMediaBtn")?.addEventListener("click",addMedia);
+  $("#addPublishBtn")?.addEventListener("click",addPublication);
+  $("#videoFile")?.addEventListener("change",e=>{if(e.target.files[0])initVideo(e.target.files[0]);});
+  $("#setIn")?.addEventListener("click",()=>{const v=$("#localVideo");if(!v)return toast("Import a video first.");trimIn=v.currentTime;$("#trimInfo").textContent=`In point: ${trimIn.toFixed(2)}s · Out point: ${trimOut===null?"not set":trimOut.toFixed(2)+"s"} · Reference markers only.`;});
+  $("#setOut")?.addEventListener("click",()=>{const v=$("#localVideo");if(!v)return toast("Import a video first.");trimOut=v.currentTime;$("#trimInfo").textContent=`In point: ${trimIn===null?"not set":trimIn.toFixed(2)+"s"} · Out point: ${trimOut.toFixed(2)}s · Reference markers only.`;});
+  $("#clearVideo")?.addEventListener("click",()=>{if(localVideoUrl)URL.revokeObjectURL(localVideoUrl);localVideoUrl=null;$("#videoStage").innerHTML='<div class="placeholder">Preview cleared.</div>';$("#trimInfo").textContent="Import a clip to begin.";});
+  ["graphicHeading","graphicSub","graphicDate","graphicFooter"].forEach(id=>$("#"+id)?.addEventListener("input",drawGraphic));
+  $("#downloadGraphic")?.addEventListener("click",()=>{const a=document.createElement("a");a.download="agape-announcement.png";a.href=$("#graphicCanvas").toDataURL("image/png");a.click();});
+  $("#redrawGraphic")?.addEventListener("click",drawGraphic);
+  $("#startCamera")?.addEventListener("click",startCamera);$("#stopCamera")?.addEventListener("click",stopCamera);$("#recordCamera")?.addEventListener("click",recordCamera);
+  $("#markReadBtn")?.addEventListener("click",async()=>{const batch=writeBatch(db);activities.forEach(a=>batch.update(doc(db,"activities",a.id),{readBy:[...new Set([...(a.readBy||[]),currentUser.uid])]}));await batch.commit();toast("Visible activity marked as read.");});
+  $$("[data-open-project]").forEach(b=>b.addEventListener("click",()=>{const p=projects.find(x=>x.id===b.dataset.openProject);openModal("Project details",`<p><strong>${esc(p.title)}</strong></p><p class="settings-note">${esc(p.description||"No description")}</p><label class="field">Update status<select name="status">${["draft","in progress","pending","completed","archived"].map(s=>`<option ${p.status===s?"selected":""}>${s}</option>`).join("")}</select></label><label class="field">Submit for approval<input type="checkbox" name="submit" value="yes"></label>`,async fd=>{await updateDoc(doc(db,"projects",p.id),{status:fd.get("status"),updatedAt:serverTimestamp()});if(fd.get("submit")==="yes"){await addDoc(collection(db,"approvals"),{title:p.title,projectId:p.id,projectTitle:p.title,status:"pending",submittedBy:currentUser.uid,submittedByName:profile.displayName,createdAt:serverTimestamp()});await addActivity("approval","Project submitted for approval",p.title);}await loadData();toast("Project updated.");});}));
+  $$("[data-approve]").forEach(b=>b.addEventListener("click",()=>reviewApproval(b.dataset.approve,"approved")));
+  $$("[data-reject]").forEach(b=>b.addEventListener("click",()=>reviewApproval(b.dataset.reject,"rejected")));
+  $$("[data-page]").forEach(b=>b.addEventListener("click",()=>navigate(b.dataset.page)));
+  $("#resetPassword")?.addEventListener("click",async()=>{await sendPasswordResetEmail(auth,currentUser.email);toast("Password reset email sent.");});
+}
+function renderPage(){renderPageBase();bindPageActions();}
+$("#loginForm").addEventListener("submit",async e=>{e.preventDefault();try{await signInWithEmailAndPassword(auth,$("#loginEmail").value.trim(),$("#loginPassword").value);toast("Signed in.");}catch(err){toast(err.message);}});
+$("#showRegister").addEventListener("click",()=>{$("#loginForm").classList.add("hidden");$("#showRegister").classList.add("hidden");$("#registerForm").classList.remove("hidden");$("#authHeading").textContent="Join the studio";$("#authSub").textContent="Your invitation must be valid and assigned to your email.";});
+$("#backToLogin").addEventListener("click",()=>{$("#registerForm").classList.add("hidden");$("#loginForm").classList.remove("hidden");$("#showRegister").classList.remove("hidden");$("#authHeading").textContent="Welcome back";$("#authSub").textContent="Sign in with your invited team account.";});
+$("#registerForm").addEventListener("submit",async e=>{
+  e.preventDefault();const code=$("#inviteCode").value.trim().toUpperCase(),email=$("#registerEmail").value.trim().toLowerCase(),name=$("#registerName").value.trim(),password=$("#registerPassword").value;
+  let cred=null;
+  try{
+    // Sign in first so Firestore can securely reveal only an invitation assigned to this email.
+    isRegistering=true;
+    cred=await createUserWithEmailAndPassword(auth,email,password);
+    const invRef=doc(db,"invitations",code),invSnap=await getDoc(invRef);
+    if(!invSnap.exists()){
+      await deleteUser(cred.user); await signOut(auth);
+      throw Error("Invitation not found. Ask your Media Director to issue a new invitation.");
+    }
+    const inv=invSnap.data();
+    if(inv.status!=="pending"||inv.email!==email){
+      await deleteUser(cred.user); await signOut(auth);
+      throw Error("Invitation is expired, already used or assigned to another email.");
+    }
+    await updateDoc(invRef,{status:"redeemed",redeemedBy:cred.user.uid,redeemedAt:serverTimestamp()});
+    await setDoc(doc(db,"users",cred.user.uid),{uid:cred.user.uid,email,displayName:name,role:inv.role,department:inv.department,status:"active",invitationId:code,createdAt:serverTimestamp()});
+    await addDoc(collection(db,"activities"),{type:"invite",title:"New team member registered",description:`${name} joined ${inv.department}`,actorUid:cred.user.uid,actorName:name,createdAt:serverTimestamp(),readBy:[]});
+    isRegistering=false;
+    await enterApp(cred.user);
+    toast("Account created. Welcome to Agape Media Studio.");
+  }catch(err){isRegistering=false;console.error(err);toast(err.message||"Registration failed.");}
+});
+$("#logoutBtn").addEventListener("click",async()=>{stopCamera();if(unsubscribeActivity)unsubscribeActivity();await signOut(auth);});
+$("#refreshBtn").addEventListener("click",()=>loadData().then(()=>toast("Workspace refreshed.")));
+$("#menuToggle").addEventListener("click",()=>$("#sidebar").classList.toggle("open"));
+$("#mainNav").addEventListener("click",e=>{const b=e.target.closest("[data-page]");if(b)navigate(b.dataset.page);});
+$$(".notification-btn").forEach(b=>b.addEventListener("click",()=>navigate("activity")));
+onAuthStateChanged(auth,async user=>{if(user){if(isRegistering)return;try{await enterApp(user);}catch(e){console.error(e);await signOut(auth);showAuth();toast("Could not load your studio profile.");}}else{currentUser=null;profile=null;showAuth();}});
+if("serviceWorker" in navigator && location.protocol.startsWith("http"))navigator.serviceWorker.register("./service-worker.js").catch(console.warn);
+
+  </script>
+</body>
+</html>
